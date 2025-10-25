@@ -1,0 +1,6 @@
+flask
+pymongo
+requests
+apscheduler
+plotly
+pandas
