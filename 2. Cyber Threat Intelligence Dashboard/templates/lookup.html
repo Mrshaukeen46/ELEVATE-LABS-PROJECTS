@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IOC Lookup</title>
+</head>
+<body>
+    <h1>Lookup IP/Domain</h1>
+    <form method="POST">
+        <input type="text" name="ioc" placeholder="Enter IP or Domain" required>
+        <button type="submit">Check</button>
+    </form>
+    {% if vt_data %}
+    <h2>VirusTotal: {{ vt_data.threat_level }}</h2>
+    <pre>{{ vt_data.details | tojson(indent=2) }}</pre>
+    {% endif %}
+    {% if ab_data %}
+    <h2>AbuseIPDB: {{ ab_data.threat_level }}</h2>
+    <pre>{{ ab_data.details | tojson(indent=2) }}</pre>
+    {% endif %}
+    <a href="/">Back to Dashboard</a>
+</body>
+</html>
