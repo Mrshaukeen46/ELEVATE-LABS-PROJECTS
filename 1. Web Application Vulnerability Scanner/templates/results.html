@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Scan Results</title>
+</head>
+<body>
+  <h1>Scan Results</h1>
+  <a href="/">Run another scan</a>
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead><tr><th>Type</th><th>Severity</th><th>URL</th><th>Evidence</th></tr></thead>
+    <tbody>
+    {% for r in results %}
+      <tr>
+        <td>{{ r.type }}</td>
+        <td>{{ r.severity }}</td>
+        <td>{{ r.url }}</td>
+        <td><pre>{{ r.evidence }}</pre></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
