@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Web Vuln Scanner</title>
+</head>
+<body>
+  <h1>Web Vulnerability Scanner (Local Targets Only)</h1>
+  <p>WARNING: Only scan targets you own or have permission to test. Default allowed hosts: localhost, 127.0.0.1</p>
+  {% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+  <form method="post">
+    <label>Target URL: <input name="target" value="http://localhost:3000"></label><br>
+    <label>Depth: <input name="depth" value="2" type="number" min="1" max="4"></label><br>
+    <button type="submit">Start Scan</button>
+  </form>
+</body>
+</html>
