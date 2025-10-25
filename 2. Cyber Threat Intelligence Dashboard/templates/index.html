@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTI Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Cyber Threat Intelligence Dashboard</h1>
+    <a href="/lookup">Lookup IOC</a> | <a href="/export">Export Data</a>
+    <h2>Recent Threats</h2>
+    <ul>
+        {% for threat in threats %}
+        <li>{{ threat.ioc }} - {{ threat.threat_level }} ({{ threat.source }}) - Tag: {{ threat.get('tag', 'None') }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Threat Trends</h2>
+    <div id="trend-chart"></div>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+</body>
+</html>
