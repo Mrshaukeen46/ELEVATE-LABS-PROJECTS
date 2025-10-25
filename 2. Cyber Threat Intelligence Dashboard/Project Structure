@@ -1,0 +1,15 @@
+cti_dashboard/
+├── app.py                 # Main Flask app
+├── config.py              # Configuration (API keys, MongoDB URI)
+├── data_fetcher.py        # Script to pull data from APIs
+├── models.py              # MongoDB models/schemas
+├── requirements.txt       # Dependencies
+├── templates/
+│   ├── index.html         # Main dashboard page
+│   └── lookup.html        # Lookup page for user input
+├── static/
+│   ├── css/
+│   │   └── style.css      # Basic styling
+│   └── js/
+│       └── charts.js      # JavaScript for Plotly visualizations
+└── scheduler.py           # Background scheduler for real-time pulls
